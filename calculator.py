@@ -1,9 +1,54 @@
+win = Tk()
+win.title('Calculator')
+tvar = ""
+
+def beenClicked():
+    l.configure(text=Button(win)) #this doesn't work yet, want it to show any button depending on which was clicked                                                                
+def configfunc(button, tvar):
+    tvar = tvar + button
+    l.configure(text=tvar)
+    return tvar
+
+b1.configure(command=configfunc("1", tvar))
+b2.configure(command=configfunc("2", tvar))
+#b3.configure(command=b3func)                                                                                                                                                      
+#b4.configure(command=b4func)                                                                                                                                                      
+#b5.configure(command=b5func)                                                                                                                                                      
+#b6.configure(command=b6func)                                                                                                                                                      
+#b7.configure(command=b7func)                                                                                                                                                      
+#b8.configure(command=b8func)                                                                                                                                                      
+#b9.configure(command=b9func)                                                                                                                                                      
+#b0.configure(command=b0func)                                                                                                                                                      
+#bdiv.configure(command=bdivfunc)                                                                                                                                                  
+#bmul.configure(command=bmulfunc)                                                                                                                                                  
+#badd.configure(command=baddfunc)                                                                                                                                                  
+#bsub.configure(command=bsubfunc)                                                                                                                                                  
+#bequ.configure(command=bequfunc)                                                                                                                                                  
+#bclr.configure(command=clear) 
+
+
+
+
 from tkinter import *
 win = Tk()
 win.title('Calculator')
+tvar = ""
 
 def beenClicked():
     l.configure(text=Button(win)) #this doesn't work yet, want it to show any button depending on which was clicked
+def configfunc(button):
+    tvar = tvar + "button"
+    l.configure(text=tvar)
+    return tvar
+
+
+
+
+
+
+
+
+
 
 
 b1 = Button(win, text="1")
@@ -45,22 +90,22 @@ textbox = StringVar()
 textbox.set(None)
 
 
-b1.configure(command=beenClicked)
-b2.configure(command=beenClicked)
-b3.configure(command=beenClicked)
-b4.configure(command=beenClicked)
-b5.configure(command=beenClicked)
-b6.configure(command=beenClicked)
-b8.configure(command=beenClicked)
-b7.configure(command=beenClicked)
-b9.configure(command=beenClicked)
-b0.configure(command=beenClicked)
-bdiv.configure(command=beenClicked)
-bmul.configure(command=beenClicked)
-badd.configure(command=beenClicked)
-bsub.configure(command=beenClicked)
-bequ.configure(command=beenClicked)
-bclr.configure(command=beenClicked)
+b1.configure(command=configfunc("1"))
+b2.configure(command=configfunc("2"))
+b3.configure(command=b3func)
+b4.configure(command=b4func)
+b5.configure(command=b5func)
+b6.configure(command=b6func)
+b7.configure(command=b7func)
+b8.configure(command=b8func)
+b9.configure(command=b9func)
+b0.configure(command=b0func)
+bdiv.configure(command=bdivfunc)
+bmul.configure(command=bmulfunc)
+badd.configure(command=baddfunc)
+bsub.configure(command=bsubfunc)
+bequ.configure(command=bequfunc)
+bclr.configure(command=clear)
 
 
 win.mainloop()
