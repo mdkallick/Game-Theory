@@ -1,8 +1,9 @@
 from tkinter import *
 win = Tk()
+win.title('Calculator')
 
 def beenClicked():
-    l.configure(text="1")
+    l.configure(text=Button(win)) #this doesn't work yet, want it to show any button depending on which was clicked
 
 
 b1 = Button(win, text="1")
@@ -15,11 +16,12 @@ b7 = Button(win, text="7")
 b8 = Button(win, text="8")
 b9 = Button(win, text="9")
 b0 = Button(win, text="0")
-bdiv = Button(win, text="%")
+bdiv = Button(win, text="/")
 bmul = Button(win, text="*")
 badd = Button(win, text="+")
 bsub = Button(win, text="-")
 bequ = Button(win, text="=")
+bclr = Button(win, text='c')
 b1.grid(row=3, column=1)
 b2.grid(row=3, column=2)
 b3.grid(row=3, column=3)
@@ -29,18 +31,37 @@ b6.grid(row=2, column=3)
 b7.grid(row=1, column=1)
 b8.grid(row=1, column=2)
 b9.grid(row=1, column=3)
-b0.grid(row=4, column=2)
+b0.grid(row=4, column=1)
 bdiv.grid(row=1, column=4)
 bmul.grid(row=2, column=4)
 badd.grid(row=4, column=4)
 bsub.grid(row=3, column=4)
 bequ.grid(row=4, column=3)
-l = Label(win, text = "test")
+bclr.grid(row=4, column=2)
+l = Label(win, text="")
 l.grid(row=0, column=2)
 
-textbox=StringVar()
+textbox = StringVar()
 textbox.set(None)
-numbox = Button(win, text="test")
-numbox.grid(row=5, column=5)
-numbox.configure(command=beenClicked)
+
+
+b1.configure(command=beenClicked)
+b2.configure(command=beenClicked)
+b3.configure(command=beenClicked)
+b4.configure(command=beenClicked)
+b5.configure(command=beenClicked)
+b6.configure(command=beenClicked)
+b8.configure(command=beenClicked)
+b7.configure(command=beenClicked)
+b9.configure(command=beenClicked)
+b0.configure(command=beenClicked)
+bdiv.configure(command=beenClicked)
+bmul.configure(command=beenClicked)
+badd.configure(command=beenClicked)
+bsub.configure(command=beenClicked)
+bequ.configure(command=beenClicked)
+bclr.configure(command=beenClicked)
+
+
+win.mainloop()
 
