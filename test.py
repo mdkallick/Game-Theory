@@ -30,21 +30,12 @@ for buttonNum in range(0,10):
     button.bind("<Button-1>", buttonClicked)
     # binds function to event
     buttons.append(button)
-    button.grid(row=int(buttonNum/3)+1 , column=buttonNum % 3) 
+    button.grid(row=buttonNum % 4, column=buttonNum % 3) # still trying to fiddle with rows and columns in an array
 
 # need to handle the non-numeric buttons
 # how to loop over some characters instead of numbers?
 
 
-functions = ["%","*","-","+","="]
-for operator in range(0,5):
-    button = Button(win, text=str(functions[operator]))
-    button.pack()
-    button.bind("<Button-1>", buttonClicked)
-    functions.append(button)
-    # print (functions[operator])
-    button.grid(row=int(operator+1) , column=4)
-    
 """
 bdiv = Button(win, text="/")
 bmul = Button(win, text="*")
@@ -73,4 +64,3 @@ l = Label(win, textvariable=textbox)
 l.grid(row=0, column=2)
 
 win.mainloop()
-
